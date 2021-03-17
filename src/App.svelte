@@ -12,8 +12,7 @@
 <form>
 	<h1>Hello, {username.toUpperCase()}!</h1>
 	<h2>Username is {username.length} characters</h2>
-	<button type="button" on:click={clearUsername}>Clear Username</button>
-	<Button>Beautiful Button</Button>
+	<Button type="button" on:click={clearUsername}>Clear Username</Button>
 </form>
 
 </main>
