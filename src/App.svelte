@@ -1,18 +1,16 @@
 <script>
-	let username = "goku"
+	let username = "goku";
 
-	function clearusername(){
-		username=""
+	function clearUsername() {
+		username = "";
 	}
 </script>
 
 <main>
 <form>
-	<label>username:
-		<input type="text" bind:value={username}>
-	</label>
-	<h1>{username}</h1>
-	<button on:click={clearusername}>clear username</button>
+	<h1>Hello, {username.toUpperCase()}!</h1>
+	<h2>Username is {username.length} characters</h2>
+	<button type="button" on:click={clearUsername}>Clear Username</button>
 </form>
 
 </main>
