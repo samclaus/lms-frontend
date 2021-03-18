@@ -1,28 +1,46 @@
-<script>
-	import Button from "@smui/button"
+<script lang="ts">
+	import Button from "@smui/button";
+	import TextField from "@smui/textfield";
+	import HelperText from "@smui/textfield/helper-text/index";
 
-	let username = "goku";
+	let username = "";
+	let password = "";
 
-	function clearUsername() {
-		username = "";
+	function login(event: Event): void {
+		// Stop the browser from submitting the HTML form and doing old-fashioned SSR stuff
+		event.preventDefault();
+
+		console.log("Logging in...");
 	}
 </script>
 
 <main>
-<form>
-	<h1>Hello, {username.toUpperCase()}!</h1>
-	<h2>Username is {username.length} characters</h2>
-	<Button type="button" on:click={clearUsername}>Clear Username</Button>
-</form>
-
+	<h1>Login to Edify</h1>
+	<form on:submit={login}>
+		<div>
+			<TextField variant="filled" label="Username" bind:value={username}/>
+			<HelperText>You may also login using your email</HelperText>
+		</div>
+		<div>
+			<TextField variant="filled" label="Password" bind:value={password} type="password"/>
+		</div>
+		<div>
+			<Button type="submit">Login</Button>
+			<Button type="reset">Reset</Button>
+		</div>
+	</form>
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	h1 {
