@@ -14,6 +14,11 @@
 	}
 </script>
 
+<svelte:head>
+	<!-- Change the page title when we are on the login screen -->
+	<title>Edify | Login</title>
+</svelte:head>
+
 <main>
 	<h1>Login to Edify</h1>
 	<form on:submit={login}>
