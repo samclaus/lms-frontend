@@ -9,8 +9,17 @@
 	function login(event: Event): void {
 		// Stop the browser from submitting the HTML form and doing old-fashioned SSR stuff
 		event.preventDefault();
+		
+		const ws = new WebSocket(`wss://${window.location.host}/connect`);
+		
+		ws.addEventListener("open", function() {
+			ws.send(JSON.stringify({
+				username,
+				password: btoa(password)
+			}))
+		})
 
-		console.log("Logging in...");
+		
 	}
 </script>
 
