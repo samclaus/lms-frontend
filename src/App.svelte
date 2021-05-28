@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from "@smui/button";
-	import TextField from "@smui/textfield";
-	import HelperText from "@smui/textfield/helper-text/index";
+	import Button from "@smui/button/styled";
+	import TextField from "@smui/textfield/styled";
+	import HelperText from "@smui/textfield/helper-text/styled";
 
 	let username = "";
 	let password = "";
@@ -33,7 +33,7 @@
 	<form on:submit={login}>
 		<div>
 			<TextField variant="filled" label="Username" bind:value={username}/>
-			<HelperText>You may also login using your email</HelperText>
+			<HelperText persistent slot="helper">You may also login using your email</HelperText>
 		</div>
 		<div>
 			<TextField variant="filled" label="Password" bind:value={password} type="password"/>
